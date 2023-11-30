@@ -16,7 +16,7 @@ const OrderFinalpage = ({route}) => {
       <Image source={require('../assets/greencheck.png')} style={{ width: "66%", height: "33%"}}></Image>
       <Text style={styles.text}>Thank You! {orderData.Name}</Text>
       <Text style={styles.text}>For Shopping With us..</Text>
-      <Text style={styles.text}>Date:{orderData.Date}</Text>
+      <Text style={styles.text}>Date:{orderData.Date1}</Text>
       <Text style={styles.text}>OrderID:{orderData. OrderID}</Text>
       <View style={styles.btncontainer}>
         <TouchableOpacity style={styles.button} onPress={() => {
