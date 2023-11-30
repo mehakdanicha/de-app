@@ -19,6 +19,7 @@ const Checkout = () => {
   const [deliverycharge, setdeliverycharge] = useState('')
   const [shipping, setShipping] = useState('')
   const [userData, setUserData] = useState(null);
+  const [selectedShipping, setSelectedShipping] = useState('');
   useEffect(() => {
     // Fetch user data from AsyncStorage when the component mounts
     getUserData();
@@ -71,13 +72,13 @@ const Checkout = () => {
   };
   const currentdate = new Date(); // Current date and time
  
-  const Date = currentdate.toDateString(); // Converts the date to a human-readable string
+  const Date1 = currentdate.toDateString(); // Converts the date to a human-readable string
 
   const saveorder = async () => {
     try {
       const OrderID = generateOrderId();
       const orderData = {
-        Date,
+        Date1,
         OrderID,
         payment: 'COD',
         shipping,
@@ -120,6 +121,7 @@ const Checkout = () => {
   // Set the default shipping option
 const handleRadioChange = (option) => {
   setShipping(option);
+  setSelectedShipping(option);
 };
 
 const handleDelete = () => {
@@ -145,6 +147,12 @@ switch (shipping) {
 }
 const totalamount = totalPrice + deliverycharges;
 const handleCombinedClick = () => {
+  if (!selectedShipping) {
+    Alert.alert('Please select a shipping option');
+    return;
+  }
+
+  ordersummaryID=generateOrderId();
   
   saveorder();
   handleDelete();
@@ -398,3 +406,4 @@ marginLeft:270,
 
 
 });
+
