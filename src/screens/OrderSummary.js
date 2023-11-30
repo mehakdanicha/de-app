@@ -123,7 +123,7 @@ const OrderSummary = ({route}) => {
                             );
                         }}
                     />
-                    <Text style={styles.text1} >Date : {orderData.Date}</Text>
+                    <Text style={styles.text1} >Date : {orderData.Date1}</Text>
                     <Text style={styles.text1} >Personal Information</Text>
                     <Text style={styles.text}>Name: {orderData.Name}</Text>
                     <Text style={styles.text}>Email: {orderData.Email}</Text>
